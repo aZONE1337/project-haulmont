@@ -1,30 +1,45 @@
-# Skeleton Starter for Vaadin
+# Описание задачи
+Реализовать систему ввода и отображения информации о рецептах поликлиники, включающую следующие сущности и их атрибуты:
+* Пациент 
+	* Имя
+	* Фамилия 
+	* Отчество 
+	* Телефон
+* Врач
+	* Имя
+	* Фамилия 
+	* Отчество 
+	* Специализация
+* Рецепт
+	* Описание
+	* Пациент
+	* Врач
+	* Дата создания 
+	* Срок действия 
+	* Приоритет
 
-This project can be used as a starting point to create your own Vaadin application.
-It has the necessary dependencies and files to help you get started.
+Рецепт может иметь один из приоритетов: Нормальный, Cito (Срочный), Statim (Немедленный).
 
-The best way to use it is via [vaadin.com/start](https://vaadin.com/start) - you can get only the necessary parts and choose the package naming you want to use.
-There is also a [getting started tutorial](https://vaadin.com/tutorials/getting-started-with-flow) based on this project.
+# Используемые технологии:
+- [x] Java SE 8
+- [x] Пользовательский интерфейс на [Vaadin 8](https://vaadin.com)
+- [x] Доступ к данным через JDBC
+- [x] Сервер баз данных: HSQLDB в [in-process режиме](http://hsqldb.org/doc/2.0/guide/running-chapt.html#rgc_inprocess)
 
-To access it directly from github, clone the repository and import the project to the IDE of your choice as a Maven project. You need to have Java 8 or 11 installed.
+Требования
+-------------
 
-Run using `mvn jetty:run` and open [http://localhost:8080](http://localhost:8080) in the browser.
+* [Java Development Kit (JDK) 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [Maven 3](https://maven.apache.org/download.cgi)
 
-If you want to run your app locally in the production mode, run `mvn jetty:run -Pproduction`.
+Сборка и запуск
+-------------
 
-### Running Integration Tests
+1. Запустите следующие команды:
+	```
+	mvn package
+	mvn jetty:run
+	```
 
-Integration tests are implemented using [Vaadin TestBench](https://vaadin.com/testbench). The tests take a few minutes to run and are therefore included in a separate Maven profile. We recommend running tests with a production build to minimize the chance of development time toolchains affecting test stability. To run the tests using Google Chrome, execute
-
-`mvn verify -Pit,production`
-
-and make sure you have a valid TestBench license installed.
-
-Profile `it` adds the following parameters to run integration tests:
-```sh
--Dwebdriver.chrome.driver=path_to_driver
--Dcom.vaadin.testbench.Parameters.runLocally=chrome
-```
-
-For a full Vaadin application example, there are more choices available also from [vaadin.com/start](https://vaadin.com/start) page.
+2. Перейдите по ссылке: `http://localhost:8080`в браузере.
 
